@@ -1,0 +1,150 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #FAFAFA;
+  background-image: url(/public/Bitmap.jpg);
+  background-repeat: no-repeat;
+  
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+.todoApp {
+  position: relative;
+  top: 70px;
+  margin-inline: auto;
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+h1 {
+  color: #FFFFFF;
+}
+
+.giris {
+  padding: 10px 160px 10px 40px;
+  width: 540px;
+  border: solid 1px #E3E4F1;
+  border-radius: 10px;
+  color: #9495A5;
+}
+
+ul {
+  list-style: none;
+  border: solid 1px #C2C3D680;
+  border-radius: 10px;
+  width: 540px;
+  padding-left: 0px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color: #494C6B;
+  background-color: #FFFFFF;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+
+.readOnly {
+  padding: 20px 24px;
+  border: solid 1px #E3E4F1;
+  display: flex;
+  align-content: space-between;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+}
+
+.filters p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.1944444477558136px;
+  text-align: left;  
+  color: #9495A5;
+}
+
+.clearbtn {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.1944444477558136px;
+  text-align: right;  
+  border: transparent;
+  background-color: transparent;
+  color: #9495A5;
+}
+
+.btn button {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -0.1944444477558136px;
+  text-align: left;  
+  border: transparent;
+  background-color: transparent;
+  color: #9495A5;
+}
+
+.silme {
+  border: transparent;
+  background-color: transparent;
+}
