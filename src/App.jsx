@@ -6,6 +6,7 @@ const generateId = () => ++id;
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState('all');
  
 
   function appendTodo(task) {
@@ -25,6 +26,16 @@ function App() {
     setTodos(todos.filter(x => !x.completed));
   }
 
+  function getFilteredTodos() {
+    if (filter === 'completed') {
+      return todos.filter(todo => todo.completed);
+    }
+    if (filter === 'incomplete') {
+      return todos.filter(todo => !todo.completed);
+    }
+    return todos;
+  }
+
   function checkBox(id) {
     setTodos(
       todos.map(todo => {
@@ -42,13 +53,13 @@ function App() {
     <div className="todoApp">
       <div className="header"><h1>TODO</h1></div>
       <TodoForm appendTodo={appendTodo} />
-      <TodoList todos={todos} deleteTodo={deleteTodo} checkBox={checkBox} />
+      <TodoList todos={getFilteredTodos()} deleteTodo={deleteTodo} checkBox={checkBox} />
       <div className="filters">
         <p>{todos.length} items left</p>
         <div className="btn">
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <button onClick={() => setFilter('all')}>All</button>
+        <button onClick={() => setFilter('incomplete')}>Active</button>
+        <button onClick={() => setFilter('completed')}>Completed</button>
         </div>
         <button className='clearbtn' onClick={deleteCompleted}>Clear Completed</button>
       </div>
